@@ -38,14 +38,12 @@ public class Main {
             throw new RuntimeException(e);
         }
 
-/*
-  */
-/*      //filling employee_book table in database
+     //filling employee_book table in database
         Request request = new Request();
         request.setCommandName(CommandName.GENERATE_EMPLOYEE_BOOK_LIST);
         Response response = controller.processRequest(request);
         System.out.println(response.getMessage());
-*//*
+
 
         // View report on the employees who have read more than 1 book
         Request request1 = new Request();
@@ -62,7 +60,7 @@ public class Main {
         Response response2 = controller.processRequest(request2);
         LinkedHashMap<Employee, Integer> notGoodReaders = response2.getNotGoodReaders();
         printNotSoGoodReaders(notGoodReaders);
-*/
+
 
         // Rename book operation
         Request request3 = new Request();
