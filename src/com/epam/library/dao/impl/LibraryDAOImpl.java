@@ -139,7 +139,7 @@ class LibraryDAOImpl implements LibraryDAO {
             }
             addEBListStatement.executeBatch();
             added = true;
-            connection.setAutoCommit(true);
+            connection.commit();
         } catch (ConnectionPoolException e) {
             throw new DAOException("Error while taking connection from ConnectionPool", e);
         } catch (SQLException e) {
@@ -268,7 +268,7 @@ class LibraryDAOImpl implements LibraryDAO {
             }
             updateTitleStatement.executeBatch();
             renamed = true;
-            connection.setAutoCommit(true);
+            connection.commit();
         } catch (ConnectionPoolException e) {
             throw new DAOException("Error while taking connection from ConnectionPool", e);
         } catch (SQLException e) {
@@ -321,7 +321,7 @@ class LibraryDAOImpl implements LibraryDAO {
             }
             updateTitleStatement.executeBatch();
             renamed = true;
-            connection.setAutoCommit(true);
+            connection.commit();
         } catch (ConnectionPoolException e) {
             throw new DAOException("Error while taking connection from ConnectionPool", e);
         } catch (SQLException e) {
